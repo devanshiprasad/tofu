@@ -1,23 +1,17 @@
 import React from 'react';
 import './App.css';
+import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 
-function App() {
+function App({signOut,user}) {
   return (
-    <div className="App">
-      <nav className="navbar">
-        <div className="navbar-content">
-          <button className="nav-button">button 2</button>
-          <button className="nav-button">button 3</button>
-          <button className="nav-button">button 4</button>
-        </div>
-      </nav>
-      <div className="search-section">
-        <input type="text" placeholder="search bar" className="search-bar" />
-        <button className="search-button">button</button>
-      </div>
-    </div>
+   <>
+   <h1>Hello {user.username}</h1>
+   <button onClick={signOut}>Sign out</button>
+   </>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
+
 

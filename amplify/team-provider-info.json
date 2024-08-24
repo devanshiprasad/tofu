@@ -10,6 +10,12 @@
       "StackName": "amplify-tofu-dev-a8f07",
       "StackId": "arn:aws:cloudformation:ap-south-1:698046932951:stack/amplify-tofu-dev-a8f07/790cf120-61de-11ef-8fcd-0a086ec113ad",
       "AmplifyAppId": "d5r1qdflyl4zr"
+    },
+    "categories": {
+      "auth": {
+        "tofu59d8bf42": {},
+        "tofuaab8eec8": {}
+      }
     }
   }
 }
