@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tofu-dev-a8f07-authRole",
+      "UnauthRoleArn": "arn:aws:iam::698046932951:role/amplify-tofu-dev-a8f07-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::698046932951:role/amplify-tofu-dev-a8f07-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-tofu-dev-a8f07-deployment",
+      "UnauthRoleName": "amplify-tofu-dev-a8f07-unauthRole",
+      "StackName": "amplify-tofu-dev-a8f07",
+      "StackId": "arn:aws:cloudformation:ap-south-1:698046932951:stack/amplify-tofu-dev-a8f07/790cf120-61de-11ef-8fcd-0a086ec113ad",
+      "AmplifyAppId": "d5r1qdflyl4zr"
+    }
+  }
+}
