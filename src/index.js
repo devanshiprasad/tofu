@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
 import amplifyconfig from './amplifyconfiguration.json';
+import { BrowserRouter } from 'react-router-dom';
 
 //i've configured the amplify here.
 Amplify.configure(amplifyconfig);
@@ -12,7 +13,10 @@ Amplify.configure(amplifyconfig);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
+   
   </React.StrictMode>
 );
 

@@ -1,17 +1,27 @@
 import React from 'react';
 import './App.css';
-import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
+import RecipeFilter from './Pages/RecipeFilter';
+import { Route, Routes } from 'react-router-dom';
+import Auth from './Pages/Auth';
+import Welcome from './Pages/Welcome';
 
-function App({signOut,user}) {
+
+function App() {
   return (
    <>
-   <h1>Hello {user.username}</h1>
-   <button onClick={signOut}>Sign out</button>
+   <Routes>
+
+    <Route path='/' Index element={<Welcome/>}/>
+    <Route path='RecipeFilter' element={<RecipeFilter/>}/>
+    <Route path='Auth' element={<Auth/>}/>
+   </Routes>
+
+  
    </>
   );
 }
 
-export default withAuthenticator(App);
+export default App;
 
 
