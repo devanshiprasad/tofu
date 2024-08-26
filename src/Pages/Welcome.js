@@ -47,7 +47,7 @@ export default function Welcome() {
     </Link>
     
     <Link to= "/RecipeFilter">
-    <Text className='unauth' maxWidth="100%" lineHeight="1.5em" fontStyle="Inter"><u>no, I want to explore without an account</u></Text>
+    <Text className='unauth' maxWidth="100%" lineHeight="1.5em" fontStyle="Inter"><u>no, I want to explore without an account because I hate you</u></Text>
     </Link>
     <View as="div" width="rem" maxWidth="100%" className='footer' fontStyle="15px" fontWeight="bold">
        <Text className='span' >*click <span ><a className='link' href='https://www.mayoclinic.org/diseases-conditions/food-allergy/symptoms-causes/syc-20355095#:~:text=When%20you%20have%20a%20food,food%20substance%2C%20called%20an%20allergen.'>here</a></span>  to learn more about food preferences and allergies and why they are important</Text>
@@ -55,9 +55,35 @@ export default function Welcome() {
 
        //images 
 
-       <View as='div' justifyContent="center" width='fit-content'>
-        <Image src={image1} width="100%" height="100%" objectFit="cover" loading='eager'/>
+       <View as='div' justifyContent="center" width='fit-content'  className='pancake'>
+        <Image src={image5} width="9.625rem" height="4.25rem"/>
        </View>
+
+       <View as='div' justifyContent="center" width='fit-content'  className='pizza' >
+        <Image src={image2} width="9.625rem" height=" 6.25rem"/>
+       </View>
+
+       <View as='div' justifyContent="center" width='fit-content' className='ramen'>
+        <Image src={image3} width="10.625rem" height="5.25rem"/>
+       </View>
+
+       <View as='div' justifyContent="center" width='fit-content' className='steak'>
+        <Image src={image6} width="9.75rem" height="4.75rem"/>
+       </View>
+
+       <View as='div' justifyContent="center" width='fit-content' className='salad'>
+        <Image src={image1} width="10.0625rem" height="5.1675rem"/>
+       </View>
+
+       <View as='div' justifyContent="center" width='fit-content' className='pie' >
+        <Image src={image4} width='10rem' height="6.4375rem"/>
+       </View>
+
+
+
+
+
+       
 
 
     </Flex>

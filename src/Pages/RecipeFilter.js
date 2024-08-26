@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../App.css';
+import { getImageUrl } from '../components/Images';
 import {
     Card,
     Image,
@@ -11,6 +13,7 @@ import {
     Button,
     useTheme,
     Input,
+    SelectField,
   } from '@aws-amplify/ui-react';
 
 const RecipeFilter = () => {
@@ -37,40 +40,65 @@ const RecipeFilter = () => {
       });
   };
 
+  const logo= getImageUrl('logo.png') 
+
   return (
-    <div>
-      <h1>Recipe Search</h1>
-      {/* <input
-        type="text"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        placeholder="Enter a food item"
-      /> */}
-      <Input border-radius={50}  onChange={e => setQuery(e.target.value)} placeholder='Enter a food item' size='small' alignSelf="center" width="50%"/>
-      <select value={diet} onChange={e => setDiet(e.target.value)}>
-        <option value="">Select Diet</option>
+    //flex for the entire page
+    <Flex
+    direction="column"
+    alignItems="center"
+    justifyContent="flex-start"
+    height="100vh">
+  
+    <View width="12rem" height="9rem" paddingTop="70px" className='logo' alignSelf="flex-start">
+      <Image src={logo}/>
+    </View>
+
+
+<View className='search'> 
+  <Flex direction="row" alignItems="center" justifyContent="flex-start">
+    <View as='input' 
+          className='input' 
+          onChange={e => setQuery(e.target.value)} 
+          placeholder='enter a food item' 
+          style={{ marginRight: '8px' }} 
+    />
+    <View as='button' 
+          className='go'  
+          backgroundColor="#7D4646" 
+          borderRadius="50px" 
+          border="2px solid #000000" 
+          padding="12px 24px" 
+          justifyContent="center" 
+          cursor="pointer"
+          style={{ display: 'flex', alignItems: 'center' }} 
+          onClick={searchRecipes}
+    >
+      go!
+    </View>
+  </Flex>
+</View>
+   
+   
+    <View className='select'>
+    <Flex direction="row" alignItems="center" justifyContent="flex-start"  className='flex'>
+    <View as='select' className='diet' onChange={e => setDiet(e.target.value)} alignSelf="center"  >
+      <option value="">Select Diet</option>
         <option value="low-carb">Low Carb</option>
         <option value="high-protein">High Protein</option>
         <option value="low-fat">Low Fat</option>
         <option value="vegan">Vegan</option>
-      </select>
-      <select value={health} onChange={e => setHealth(e.target.value)}>
-        <option value="">Select Allergy</option>
+      </View>
+
+      <View as='select' className='diet' onChange={e => setHealth(e.target.value)} alignSelf="center">
+      <option value="">Select Allergy</option>
         <option value="peanut-free">Peanut Free</option>
         <option value="gluten-free">Gluten Free</option>
         <option value="dairy-free">Dairy Free</option>
-      </select>
-      <button onClick={searchRecipes}>Search</button>
-
-      {/* <div>
-       {recipes.map((recipe, index) => (
-          //<div key={index}>
-            //<h2>{recipe.recipe.label}</h2>
-            //<img src={recipe.recipe.image} alt={recipe.recipe.label} />
-            //<a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer">View Recipe</a>
-          //</div>
-        //))}
-      //</div> */}
+      </View>
+    </Flex>
+       </View>
+    
 
       <View padding={tokens.space.medium}>
       <Flex direction="row" wrap="wrap" gap={tokens.space.medium}>
@@ -105,7 +133,7 @@ const RecipeFilter = () => {
         ))}
       </Flex>
     </View>
-    </div>
+  </Flex>
   );
 };
 

@@ -83,7 +83,6 @@ button:hover {
 .view-recipe-link {
   display: inline-block;
   margin-top: 10px;
-  color: #4CAF50;
   text-decoration: none;
   font-weight: bold;
 }
@@ -92,4 +91,53 @@ button:hover {
   text-decoration: underline;
 }
 
+.header{
+  color: rgba(183, 137, 83, 0.73);
+  text-align: start;
+  font-family: "Inter-Bold", sans-serif;
+  font-weight: 900;
+  position: relative;
+  top: 4rem;
+  -webkit-text-stroke: 0.1rem #000000;
+}
 
+.logo{
+  position: relative;
+  left: 7rem;
+}
+
+.diet{
+  border-radius: 50px;
+  background-color:  rgba(183, 137, 83, 0.73);
+  border-color: #000000;
+  border-width: 2px;
+  width: fit-content;
+
+}
+.flex{
+  top: 20rem;
+  padding-top: 20rem;
+  position: relative;
+}
+
+.select{
+  position: relative;
+  top: 6rem;
+}
+
+.input {
+  border-radius: 50px;
+  width: 30rem;
+  border-color: #000000;
+  border-width: 2px;
+
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  top: 5rem;
+  left: 2rem;
+  position: relative;
+}
