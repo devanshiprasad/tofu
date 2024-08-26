@@ -1,6 +1,7 @@
 import React from 'react'
 import './welcome.css'
-import { Link, Route } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {getImageUrl} from '../components/Images';
 import Auth from './Auth';
 import RecipeFilter from './RecipeFilter';
 import {
@@ -9,13 +10,19 @@ import {
   View,
   Heading,
   Flex,
-  Badge,
+  Grid,
   Text,
-  Button,
-  useTheme,
-  Input,
 } from '@aws-amplify/ui-react';
+
+
 export default function Welcome() {
+  const image1 = getImageUrl('dish1.png')
+  const image2 = getImageUrl('dish2.png');
+  const image3 = getImageUrl('dish3.png');
+  const image4= getImageUrl('dish4.png');
+  const image5 = getImageUrl('dish5.png');
+  const image6 = getImageUrl('dish6.png');
+
   return (
     <>
     <Flex
@@ -42,10 +49,20 @@ export default function Welcome() {
     <Link to= "/RecipeFilter">
     <Text className='unauth' maxWidth="100%" lineHeight="1.5em" fontStyle="Inter"><u>no, I want to explore without an account</u></Text>
     </Link>
-    <View as="div" width="rem" maxWidth="100%" className='footer' fontStyle="15px" fontWeight="bold"> <Text className='span' >*click <span ><a className='link' href='https://www.mayoclinic.org/diseases-conditions/food-allergy/symptoms-causes/syc-20355095#:~:text=When%20you%20have%20a%20food,food%20substance%2C%20called%20an%20allergen.'>here</a></span>  to learn more about food preferences and allergies and why they are important</Text></View>
+    <View as="div" width="rem" maxWidth="100%" className='footer' fontStyle="15px" fontWeight="bold">
+       <Text className='span' >*click <span ><a className='link' href='https://www.mayoclinic.org/diseases-conditions/food-allergy/symptoms-causes/syc-20355095#:~:text=When%20you%20have%20a%20food,food%20substance%2C%20called%20an%20allergen.'>here</a></span>  to learn more about food preferences and allergies and why they are important</Text>
+       </View>
+
+       //images 
+
+       <View as='div' justifyContent="center" width='fit-content'>
+        <Image src={image1} width="100%" height="100%" objectFit="cover" loading='eager'/>
+       </View>
+
 
     </Flex>
 
+   
    
 
     </>

@@ -1,0 +1,14 @@
+{
+  "resourceName": "tofu",
+  "policyUUID": "219ddae8",
+  "bucketName": "tofu-images",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

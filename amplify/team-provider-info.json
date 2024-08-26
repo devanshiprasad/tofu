@@ -15,6 +15,9 @@
       "auth": {
         "tofu59d8bf42": {},
         "tofuaab8eec8": {}
+      },
+      "storage": {
+        "tofu": {}
       }
     }
   }
