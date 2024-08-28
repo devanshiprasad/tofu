@@ -1,4 +1,4 @@
-/* RecipeFilter.css */
+
 .recipe-filter-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -103,7 +103,8 @@ button:hover {
 
 .logo{
   position: relative;
-  left: 7rem;
+  left: 5rem;
+  top:1rem;
 }
 
 .diet{
@@ -122,7 +123,7 @@ button:hover {
 
 .select{
   position: relative;
-  top: 6rem;
+  top: 0.05rem;
 }
 
 .input {
@@ -137,7 +138,57 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  top: 5rem;
+  top: 0.05rem;
   left: 2rem;
   position: relative;
+}
+
+.page{
+  position: fixed;         
+  bottom: 0;               
+  left: 50%;              
+  transform: translateX(-50%); 
+  display: flex;
+  justify-content: center;
+  width: 100%;           
+  padding: 1rem;          
+
+
+}
+
+.cardi{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  overflow: none;
+  padding-bottom: 10rem;
+  position: relative;
+  bottom: 2rem;
+
+}
+
+.signout{
+  position: absolute;
+  top:3.5rem;
+  right:5rem;
+
+}
+.viewrecipe{
+  position: absolute;
+  top: 3.5rem;
+  right: 13rem;
+}
+
+.pancake1{
+  position: absolute;
+  left: 19.4375rem;
+  top: 20.1875rem;
+}
+
+.photos{
+  position: absolute;
+  top: 4rem;
+  left: 32rem;
 }

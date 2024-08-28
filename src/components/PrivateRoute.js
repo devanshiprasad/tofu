@@ -1,6 +1,6 @@
 import React from 'react';
-import RecipeFilter from './RecipeFilter';
 import { Authenticator } from '@aws-amplify/ui-react';
+import Auth from '../Pages/Auth';  // Assuming this is your original custom Auth component
 import '@aws-amplify/ui-react/styles.css';
 import { View, Image, useTheme, useAuthenticator, Text, Button, Heading } from '@aws-amplify/ui-react';
 import { getImageUrl } from '../components/Images';
@@ -70,30 +70,19 @@ const formFields = {
   // Other form fields (forceNewPassword, forgotPassword, etc.) remain the same as before
 };
 
-function Auth() {
+
+const PrivateRoute = ({ children }) => {
   return (
     <Authenticator formFields={formFields} components={components}>
-      {({ signOut, user }) => (
-        <>
-          <RecipeFilter/>
-          {/* <button onClick={signOut}>Sign out</button> */}
-
-          <View as='button'
-            className='signout'
-            backgroundColor="#7D4646"
-            borderRadius="50px"
-            border="2px solid #000000"
-            padding="12px 24px"
-            justifyContent="center"
-            cursor="pointer"
-            onClick={signOut}
-          >
-            sign out
-          </View>
-        </>
-      )}
+      {({ user, signOut }) =>
+        user ? (
+          children
+        ) : (
+          <Auth/>  // Render your custom Auth page here
+        )
+      }
     </Authenticator>
   );
-}
+};
 
-export default Auth;
+export default PrivateRoute;

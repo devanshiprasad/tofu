@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
 import amplifyconfig from './amplifyconfiguration.json';
 import { BrowserRouter } from 'react-router-dom';
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
 
 //i've configured the amplify here.
 Amplify.configure(amplifyconfig);

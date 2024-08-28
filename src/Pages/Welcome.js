@@ -2,8 +2,6 @@ import React from 'react'
 import './welcome.css'
 import {Link} from 'react-router-dom';
 import {getImageUrl} from '../components/Images';
-import Auth from './Auth';
-import RecipeFilter from './RecipeFilter';
 import {
   Card,
   Image,
@@ -47,7 +45,7 @@ export default function Welcome() {
     </Link>
     
     <Link to= "/RecipeFilter">
-    <Text className='unauth' maxWidth="100%" lineHeight="1.5em" fontStyle="Inter"><u>no, I want to explore without an account because I hate you</u></Text>
+    <Text className='unauth' maxWidth="100%" lineHeight="1.5em" fontStyle="Inter"><u>no, I want to explore without an account</u></Text>
     </Link>
     <View as="div" width="rem" maxWidth="100%" className='footer' fontStyle="15px" fontWeight="bold">
        <Text className='span' >*click <span ><a className='link' href='https://www.mayoclinic.org/diseases-conditions/food-allergy/symptoms-causes/syc-20355095#:~:text=When%20you%20have%20a%20food,food%20substance%2C%20called%20an%20allergen.'>here</a></span>  to learn more about food preferences and allergies and why they are important</Text>
