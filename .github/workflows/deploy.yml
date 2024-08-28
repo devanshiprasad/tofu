@@ -1,0 +1,21 @@
+name: Deploy to Amplify
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to AWS Amplify
+        uses: aws-actions/aws-amplify-console@v0.2.1
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: 'ap-south-1' 
+          app_id: 'd5r1qdflyl4zr' 
