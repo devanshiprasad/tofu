@@ -3,9 +3,9 @@ import AWS from 'aws-sdk';
 import { Card, Image, Flex, Heading, Badge, Button } from '@aws-amplify/ui-react';
 
 AWS.config.update({
-  region: process.env.REACT_APP_AWS_REGION,
-  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+  region: 'ap-south-1', 
+  accessKeyId: 'AKIA2FBWW47LYZQDIZXU', 
+  secretAccessKey: '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' 
 });
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
