@@ -3,19 +3,34 @@ name: Deploy to Amplify
 on:
   push:
     branches:
-      - master
+      - master  # Change to your default branch if different
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
-      - name: Deploy to AWS Amplify
-        uses: aws-actions/aws-amplify-console@v0.2.1
-        with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          region: 'ap-south-1' 
-          app_id: 'd5r1qdflyl4zr' 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.12.1'  # Adjust the Node.js version if necessary
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build  # Adjust this command if your build script is different
+
+    - name: Set up AWS CLI
+      uses: aws-actions/aws-cli-action@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: 'ap-south-1'  # Replace with your AWS region
+
+    - name: Deploy to Amplify
+      run: |
+        aws amplify start-deployment --app-id ${{ secrets.AMPLIFY_APP_ID }} --branch-name main
