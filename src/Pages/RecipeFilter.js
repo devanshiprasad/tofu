@@ -16,9 +16,9 @@ import { Link } from 'react-router-dom';
 import AWS from 'aws-sdk';
 
 AWS.config.update({
-  region: 'ap-south-1',
-  accessKeyId: 'AKIA2FBWW47LYZQDIZXU', 
-  secretAccessKey: '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' 
+  region: process.env.REACT_APP_AWS_REGION,
+  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
 });
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
