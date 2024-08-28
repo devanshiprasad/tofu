@@ -1,9 +1,9 @@
-name: Deploy to Amplify
+name: Deploy to AWS Amplify
 
 on:
   push:
     branches:
-      - master  # Change to your default branch if different
+      - main  # Change to your default branch
 
 jobs:
   deploy:
@@ -11,26 +11,15 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18.12.1'  # Adjust the Node.js version if necessary
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build project
-      run: npm run build  # Adjust this command if your build script is different
-
-    - name: Set up AWS CLI
-      uses: aws-actions/aws-cli-action@v1
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: 'ap-south-1'  # Replace with your AWS region
+        aws-region: ap-south-1  
 
     - name: Deploy to Amplify
       run: |
-        aws amplify start-deployment --app-id ${{ secrets.AMPLIFY_APP_ID }} --branch-name main
+        amplify publish
