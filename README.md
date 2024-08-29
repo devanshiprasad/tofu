@@ -20,21 +20,12 @@ Select from common allergies like gluten-free, peanut-free, and dairy-free to ge
 Save your favorite recipes and access them anytime.
 Secure Authentication: User authentication is managed using AWS Amplify and Cognito, ensuring secure access and data handling.
 
-
-
 https://github.com/user-attachments/assets/2b358946-a363-4b2e-b47e-9a8863579f02
 
-
-
 # Technologies Used
-Frontend: ReactJS, Amplify-UI, CSS
-Backend: AWS Amplify, DynamoDB, S3
-Authentication: AWS Cognito
-API: Edamam API for recipe search and filtering
+1. Frontend: ReactJS, Amplify-UI, CSS
+2. Backend: AWS Amplify, DynamoDB, S3
+3. Authentication: AWS Cognito
+4. API: Edamam API for recipe search and filtering
 
-# Installation & Setup
-Prerequisites
-Node.js (v18.12.1 or higher)
-npm (v8.x or higher)
-AWS Account with Amplify and Cognito configured
 
