@@ -5,7 +5,8 @@
 # Overview
 Tofu Recipe Finder is a cloud-based web application designed to help users discover recipes based on their dietary preferences and allergies. Built with ReactJS and hosted on AWS Amplify, this app offers a seamless and responsive user experience, leveraging modern cloud technologies to deliver scalable and secure functionalities.
 
-![Screenshot (271)](https://github.com/user-attachments/assets/aebe23f5-0ced-49d5-9687-53999976b821)
+# Project Architecture
+![tofu1 drawio](https://github.com/user-attachments/assets/a777f3db-3cd3-4bb9-8717-4fc54b8ec777)
 
 
 # Features
