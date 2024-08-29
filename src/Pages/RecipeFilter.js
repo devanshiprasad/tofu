@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../App.css';
 import { getImageUrl } from '../components/Images';
+
 import {
     Card,
     Image,
@@ -14,11 +15,13 @@ import {
 } from '@aws-amplify/ui-react';
 import { Link } from 'react-router-dom';
 import AWS from 'aws-sdk';
+require('dotenv').config();
+const AWS = require('aws-sdk');
 
 AWS.config.update({
   region: 'ap-south-1',
-  accessKeyId: 'AKIA2FBWW47LYZQDIZXU', 
-  secretAccessKey: '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' 
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID, 
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 });
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();

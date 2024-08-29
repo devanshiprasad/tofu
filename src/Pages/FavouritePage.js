@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import AWS from 'aws-sdk';
 import { Card, Image, Flex, Heading, Badge, Button } from '@aws-amplify/ui-react';
-
+require('dotenv').config();
+const AWS = require('aws-sdk');
 AWS.config.update({
   region: 'ap-south-1', 
-  accessKeyId: 'AKIA2FBWW47LYZQDIZXU', 
-  secretAccessKey: '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' 
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
 });
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();

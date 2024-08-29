@@ -1,6 +1,6 @@
 import React from 'react';
 import { Authenticator } from '@aws-amplify/ui-react';
-import Auth from '../Pages/Auth';  // Assuming this is your original custom Auth component
+import Auth from '../Pages/Auth';  
 import '@aws-amplify/ui-react/styles.css';
 import { View, Image, useTheme, useAuthenticator, Text, Button, Heading } from '@aws-amplify/ui-react';
 import { getImageUrl } from '../components/Images';
@@ -45,7 +45,7 @@ const components = {
       );
     },
   },
-  // Other components (SignUp, ConfirmSignUp, etc.) remain the same as before
+  
 };
 
 // Custom form fields
